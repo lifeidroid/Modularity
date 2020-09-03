@@ -77,6 +77,9 @@ dependencies {
     //Arouter页面跳转路由 https://github.com/alibaba/ARouter/blob/master/README_CN.md
     implementation rootProject.ext.dependencies["arouter-api"]
     kapt rootProject.ext.dependencies["arouter-compiler"]
+    //腾讯X5  https://x5.tencent.com/docs/access.html
+    api rootProject.ext.dependencies["tencentX5"]
+
     //通用数据模型
     api project(path: ':moduleData')
     if (isNeedCommunicationLib.toBoolean()) {

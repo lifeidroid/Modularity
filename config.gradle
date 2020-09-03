@@ -48,7 +48,9 @@ ext {
             'arouter-api'           : 'com.alibaba:arouter-api:1.5.0',
             'arouter-compiler'      : 'com.alibaba:arouter-compiler:1.2.2',
             //65535方法数限制，分包打包
-            'multidex'              : 'com.android.support:multidex:1.0.3'
+            'multidex'              : 'com.android.support:multidex:1.0.3',
+            //腾讯X5WebView https://x5.tencent.com/docs/access.html
+            'tencentX5'             : 'com.tencent.tbs.tbssdk:sdk:43903'
 
     ]
 }
