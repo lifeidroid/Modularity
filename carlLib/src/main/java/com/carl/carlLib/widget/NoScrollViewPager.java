@@ -5,7 +5,7 @@ package com.carl.carlLib.widget;
  * author : carl
  * e-mail : 991579741@qq.com
  * time   : 2020/04/10
- * desc   :
+ * desc   : 可控制滚动状态的ViewPager
  * version: 1.0
  * ==============================================
  */
