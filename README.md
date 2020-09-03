@@ -9,20 +9,20 @@
 
 ## **项目结构**
 
-- **app**：应用主项目
-- **carlLib**:通用代码封装
-  > activity:Activity/Fragment 的基础封装  
-  > fragmentfunc:Fragment 间通信工具  
-  > httpframe:网络请求框架封装，支持一键更换网络请求方式  
-  > manage:硬件设备通信管理类
-  > net:网络请求实体基础解析工具  
-  > presenter:MVP 中 Presenter 的基本封装  
-  > utils:通用工具类
-  > widget:常用自定义组件
-- **communicationLib**:TCP Server/Client 通信封装，经典蓝牙/低功耗蓝牙通信封装
-- **lib-zxing**:二维码功能库
-- **muduleData**:通用数据模型库
-  > const:页面路由清单  
-  > model:业务逻辑中通用数据模型  
-  > service:用于 module 之间项目调用接口
-- **testb**:插件化开发测试
+- **app**：应用主项目  
+- **carlLib**:通用代码封装  
+  > activity:Activity/Fragment  的基础封装  
+  > fragmentfunc:               Fragment间通信工具  
+  > httpframe:                  网络请求框架封装，支持一键更换网络请求方式  
+  > manage:                     硬件设备通信管理类  
+  > net:                        网络请求实体基础解析工具  
+  > presenter:                  MVP中Presenter的基本封装  
+  > utils:                      通用工具类  
+  > widget:                     常用自定义组件  
+- **communicationLib**:TCP Server/Client 通信封装，经典蓝牙/低功耗蓝牙通信封装  
+- **lib-zxing**:二维码功能库  
+- **muduleData**:通用数据模型库  
+  > const:                      页面路由清单  
+  > model:                      业务逻辑中通用数据模型  
+  > service:                    用于 module 之间项目调用接口  
+- **testb**:插件化开发测试  
