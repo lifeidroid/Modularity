@@ -78,7 +78,7 @@ class App : Application() {
         /***********************************初始化通信类********************************************/
         JCLib.init(this, true, true)
         //初始化通信管理类
-        CommunicationManager.instance!!.initObj(this)
+        CommunicationManager.get().initObj(this)
 //        CommunicationManager.().initObj(this)
         //打开TCPServer
 //        JCLib.getInstance().startSocketServer(AppConfig.PORT_PAD)

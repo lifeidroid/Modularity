@@ -57,18 +57,15 @@ class DeviceManager private constructor() {
     }
 
     companion object {
-        @Volatile
-        var instance: DeviceManager? = null
+        private var instance: DeviceManager? = null
             get() {
                 if (field == null) {
-                    synchronized(DeviceManager::class.java) {
-                        if (field == null) {
-                            field = DeviceManager()
-                        }
-                    }
+                    field = DeviceManager()
                 }
                 return field
             }
-            private set
+        fun get():DeviceManager{
+            return instance!!
+        }
     }
 }

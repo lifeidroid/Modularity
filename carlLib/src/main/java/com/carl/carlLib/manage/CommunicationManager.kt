@@ -13,7 +13,7 @@ import cn.carl.communicationLib.callback.JCLibCallBack
  *     version: 1.0
  * ==============================================
  */
-class CommunicationManager() {
+class CommunicationManager private constructor() {
     private val notifyMap = HashMap<String, ArrayList<AnalysisLib>>()
     private var context: Context? = null
 
@@ -54,15 +54,16 @@ class CommunicationManager() {
     }
 
     companion object {
-        var instance: CommunicationManager? = null
+        private var instance: CommunicationManager? = null
             get() {
                 if (field == null) {
-                    synchronized(CommunicationManager::class.java) {
                         field = CommunicationManager()
-                    }
                 }
                 return field
             }
+        fun get():CommunicationManager{
+            return instance!!
+        }
     }
 
 
