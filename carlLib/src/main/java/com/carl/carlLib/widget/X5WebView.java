@@ -11,6 +11,9 @@ import com.tencent.smtt.sdk.WebSettings.LayoutAlgorithm;
 import com.tencent.smtt.sdk.WebView;
 import com.tencent.smtt.sdk.WebViewClient;
 
+/**
+ * 腾讯X5通用设置
+ */
 public class X5WebView extends WebView {
     private WebViewClient client = new WebViewClient() {
         /**

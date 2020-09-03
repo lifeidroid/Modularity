@@ -1,4 +1,5 @@
 package com.carl.carlLib.utils;
+
 import android.app.Activity;
 
 import java.util.ArrayList;
@@ -7,9 +8,9 @@ import java.util.List;
 import java.util.Stack;
 
 /**
- * activity堆栈管理
+ * activity堆栈管理工具
  *
- * @author blue
+ * @author lifeidroid
  */
 public class ActivityStack {
     private static ActivityStack mSingleInstance;
@@ -121,6 +122,7 @@ public class ActivityStack {
         }
         return false;
     }
+
     /**
      * finish除actCls外的activity
      *

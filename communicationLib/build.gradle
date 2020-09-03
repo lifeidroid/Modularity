@@ -33,6 +33,6 @@ makeJar.dependsOn(build)
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    testImplementation 'junit:junit:4.13'
+    testImplementation  rootProject.ext.dependencies["junit"]
 //    compile 'com.clj.fastble:FastBleLib:2.3.4'
 }

@@ -12,7 +12,9 @@ import org.xutils.x;
 
 import java.io.File;
 
-
+/**
+ * 本工具是为了图片选则器提供图片加载框架
+ */
 public class XUtils3ImageLoader implements ImageLoader {
     private int loadingDrawableId;
     private int failureDrawableId;

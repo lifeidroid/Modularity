@@ -38,11 +38,10 @@ repositories {
 
 dependencies {
     api fileTree(include: ['*.jar'], dir: 'libs')
+    testImplementation  rootProject.ext.dependencies["junit"]
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     //图片加载
     api rootProject.ext.dependencies["glide"]
-    //noinspection GradleCompatible
-    testImplementation 'junit:junit:4.13'
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     //工具类 https://github.com/Blankj/AndroidUtilCode/blob/master/lib/utilcode/README-CN.md
     api rootProject.ext.dependencies["utilcode"]
     //xutils https://github.com/wyouflf/xUtils3

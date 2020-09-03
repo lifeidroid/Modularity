@@ -47,6 +47,6 @@ dependencies {
     implementation rootProject.ext.dependencies["arouter-api"]
     kapt rootProject.ext.dependencies["arouter-compiler"]
     implementation project(path: ':carlLib')
-    testImplementation 'junit:junit:4.12'
+    testImplementation  rootProject.ext.dependencies["junit"]
 
 }

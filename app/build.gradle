@@ -52,5 +52,5 @@ dependencies {
     if (isNeedTestB.toBoolean()) {
         implementation project(path: ':testb')
     }
-    testImplementation 'junit:junit:4.12'
+    testImplementation  rootProject.ext.dependencies["junit"]
 }
