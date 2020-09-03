@@ -6,20 +6,20 @@
 以 MVP 开发模式为基础，封装了实用的功能，如：TCP Server/Client 的创建、经典蓝牙/低功耗蓝牙通信、Fragment 间的通信以及各种自定义控件等。随着开发经验的增加也在不断更新完善中..
 ---
 >项目结构  
->>app：应用主项目  
->>carlLib:通用代码封装  
->>>activity:Activity/Fragment的基础封装  
->>>fragmentfunc:Fragment间通信工具  
->>>httpframe:网络请求框架封装，支持一键更换网络请求方式  
->>>manage:硬件设备通信管理类
->>>net:网络请求实体基础解析工具  
->>>presenter:MVP中Presenter的基本封装  
->>>utils:通用工具类
->>>widget:常用自定义组件
->>communicationLib:TCP Server/Client通信封装，经典蓝牙/低功耗蓝牙通信封装  
->>lib-zxing:二维码功能库  
->>muduleData:通用数据模型库  
->>>const:页面路由清单  
->>>model:业务逻辑中通用数据模型  
->>>service:用于module之间项目调用接口
->>testb:测试插件
++ app：应用主项目  
++ carlLib:通用代码封装  
+>activity:Activity/Fragment的基础封装  
+>fragmentfunc:Fragment间通信工具  
+>httpframe:网络请求框架封装，支持一键更换网络请求方式  
+>manage:硬件设备通信管理类
+>net:网络请求实体基础解析工具  
+>presenter:MVP中Presenter的基本封装  
+>utils:通用工具类
+>widget:常用自定义组件  
++ communicationLib:TCP Server/Client通信封装，经典蓝牙/低功耗蓝牙通信封装  
++ lib-zxing:二维码功能库  
++ muduleData:通用数据模型库  
+>const:页面路由清单  
+>model:业务逻辑中通用数据模型  
+>service:用于module之间项目调用接口
++ testb:测试插件
