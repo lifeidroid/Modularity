@@ -14,6 +14,7 @@ import com.blankj.utilcode.util.LogUtils
 import com.blankj.utilcode.util.Utils
 import com.carl.carlLib.httpframe.HttpHelper
 import com.carl.carlLib.httpframe.XUtilsProcessor
+import com.carl.carlLib.manage.CommunicationManager
 import com.carl.carlLib.utils.XUtils3ImageLoader
 import com.lzy.imagepicker.ImagePicker
 import com.lzy.imagepicker.view.CropImageView
@@ -22,6 +23,7 @@ import com.scwang.smartrefresh.layout.SmartRefreshLayout
 import com.scwang.smartrefresh.layout.api.*
 import com.scwang.smartrefresh.layout.footer.ClassicsFooter
 import com.tencent.smtt.sdk.QbSdk
+import com.uuzuche.lib_zxing.activity.ZXingLibrary
 import es.dmoral.toasty.Toasty
 import me.jessyan.autosize.AutoSize
 import me.jessyan.autosize.AutoSizeConfig
@@ -41,7 +43,7 @@ class App : Application() {
     override fun onCreate() {
         super.onCreate()
         instance = this
-        if (isDebug){
+        if (isDebug) {
             ARouter.openLog()
             ARouter.openDebug()
         }
@@ -73,10 +75,15 @@ class App : Application() {
      * 初始化插件
      */
     private fun initPlugin() {
+        /***********************************初始化通信类********************************************/
         JCLib.init(this, true, true)
-        //初始化通信类
-        //CommunicationManager.get().initObj(this)
+        //初始化通信管理类
+        CommunicationManager.instance!!.initObj(this)
+//        CommunicationManager.().initObj(this)
+        //打开TCPServer
 //        JCLib.getInstance().startSocketServer(AppConfig.PORT_PAD)
+        //添加低功耗蓝牙读写服务特征集合
+        //写特征集合
         val writeUUIDs = ArrayList<BleUUID>()
         writeUUIDs.add(
             BleUUID(
@@ -90,6 +97,7 @@ class App : Application() {
                 "49535343-8841-43f4-a8d4-ecbe34729bb3"
             )
         )
+        //读特征集合
         val notifyUUIDs = ArrayList<BleUUID>()
         notifyUUIDs.add(
             BleUUID(
@@ -103,8 +111,9 @@ class App : Application() {
                 "49535343-1e4d-4bd9-ba61-23c647249616"
             )
         )
+        //初始化低功耗蓝牙配置
         JCLib.getInstance().initBLE(writeUUIDs, notifyUUIDs)
-        /***********************************初始化AutoSize***********************************/
+        /***********************************初始化AutoSize***********}******************************/
         //屏幕适配
         AutoSize.initCompatMultiProcess(this)
         AutoSizeConfig.getInstance().unitsManager
@@ -112,13 +121,13 @@ class App : Application() {
             .setSupportSP(true)
             .supportSubunits = Subunits.MM
 
-        /***********************************初始化xUtils***********************************/
+        /***********************************初始化xUtils********************************************/
         x.Ext.init(this)
-        //x.Ext.setDebug(BuildConfig.DEBUG) // 是否输出debug日志, 开启debug会影响性能.
+        //初始化网络访问工具，并指定网络访问框架为xUtils
         HttpHelper.init(XUtilsProcessor(this))
-        /***********************************图片加载***********************************/
+        /***********************************图片加载************************************************/
 //        Fresco.initialize(this)
-        /***********************************图片选择器***********************************/
+        /***********************************图片选择器**********************************************/
         imagePicker = ImagePicker.getInstance()
         imagePicker.imageLoader =
             XUtils3ImageLoader(R.mipmap.ic_launcher, R.mipmap.ic_launcher)   //设置图片加载器
@@ -132,7 +141,7 @@ class App : Application() {
         imagePicker.focusHeight = 800  //裁剪框的高度。单位像素（圆形自动取宽高最小值）
         imagePicker.outPutX = 1000//保存文件的宽度。单位像素
         imagePicker.outPutY = 1000//保存文件的高度。单位像素
-        /***********************************工具类集合***********************************/
+        /***********************************工具类集合**********************************************/
         Utils.init(this)
         //配置日志输出
         LogUtils.getConfig().setBorderSwitch(true)
@@ -140,7 +149,7 @@ class App : Application() {
             .setFilePrefix("log").dir =
             (Environment.getExternalStorageDirectory().toString() + File.separator
                     + AppUtils.getAppName())//设置 log 文件存储目录
-        /***********************************下拉刷新***********************************/
+        /***********************************下拉刷新|上拉加载样式配置*********************************/
         SmartRefreshLayout.setDefaultRefreshHeaderCreator(object : DefaultRefreshHeaderCreator {
             override fun createRefreshHeader(
                 context: Context,
@@ -164,25 +173,21 @@ class App : Application() {
                 return ClassicsFooter(context).setDrawableSize(20f)
             }
         })
-        /***********************************腾讯X5***********************************/
+        /***********************************腾讯X5**************************************************/
         val cb = object : QbSdk.PreInitCallback {
             override fun onViewInitFinished(arg0: Boolean) {}
             override fun onCoreInitFinished() {
             }
         }
         QbSdk.initX5Environment(applicationContext, cb)
-        /***********************************Toast***********************************/
+        /***********************************Toast**************************************************/
         Toasty.Config.getInstance()
             .setTextSize(22) // 定义字体大小
             .apply()
-//        Toasty.Config.getInstance()
-//            .setTextSize(resources.getDimension(R.dimen.font_size_normal).toInt()) // 定义字体大小
-//            .apply()
-        /***********************************二维码扫描***********************************/
-//        ZXingLibrary.initDisplayOpinion(this)
+        /***********************************二维码扫描**********************************************/
+        ZXingLibrary.initDisplayOpinion(this)
 
     }
-
 
 
     /**

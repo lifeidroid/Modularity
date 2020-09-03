@@ -8,6 +8,7 @@ import com.alibaba.android.arouter.facade.annotation.Route
 import com.alibaba.android.arouter.facade.callback.NavigationCallback
 import com.alibaba.android.arouter.launcher.ARouter
 import com.carl.carlLib.activity.BaseActivity
+import com.carl.carlLib.manage.DeviceManager
 import com.carl.moduledata.const.PageURL
 import com.carl.moduledata.model.LoginModel
 import com.carl.moduledata.service.HelloService
