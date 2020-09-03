@@ -1,0 +1,85 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
+    defaultConfig {
+        minSdkVersion rootProject.ext.android["minSdkVersion"]
+        targetSdkVersion rootProject.ext.android["targetSdkVersion"]
+        versionCode rootProject.ext.android["versionCode"]
+        versionName rootProject.ext.android["versionName"]
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    kapt {
+        arguments {
+            arg("AROUTER_MODULE_NAME", project.getName())
+        }
+    }
+
+    buildToolsVersion '29.0.2'
+}
+
+repositories {
+    mavenCentral()
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    //图片加载
+    api rootProject.ext.dependencies["glide"]
+    //noinspection GradleCompatible
+    testImplementation 'junit:junit:4.13'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    //工具类 https://github.com/Blankj/AndroidUtilCode/blob/master/lib/utilcode/README-CN.md
+    api rootProject.ext.dependencies["utilcode"]
+    //xutils https://github.com/wyouflf/xUtils3
+    api rootProject.ext.dependencies["xutils"]
+    //屏幕适配   https://github.com/JessYanCoding/AndroidAutoSize
+    api rootProject.ext.dependencies["autosize"]
+    //Toast  https://github.com/GrenderG/Toasty
+    api rootProject.ext.dependencies["Toasty"]
+    //JSON转换 https://github.com/alibaba/fastjson
+    api rootProject.ext.dependencies["fastjson"]
+    //适配器 https://github.com/hongyangAndroid/baseAdapter
+    api rootProject.ext.dependencies["adapter"]
+    api rootProject.ext.dependencies["rvadapter"]
+    //轮播图 https://github.com/bingoogolapple/BGABanner-Android
+    api rootProject.ext.dependencies["bga-banner"]
+    //图片选择https://github.com/jeasonlzy/ImagePicker
+    api rootProject.ext.dependencies["imagepicker"]
+    //分段算择器https://github.com/7heaven/SHSegmentControl
+    api rootProject.ext.dependencies["segmentcontrol"]
+    //下拉刷新 https://github.com/scwang90/SmartRefreshLayout
+    api rootProject.ext.dependencies["SmartRefreshLayout"]
+    api rootProject.ext.dependencies["SmartRefreshHeader"]
+    //底部导航 https://github.com/armcha/LuseenBottomNavigation
+//    api rootProject.ext.dependencies["LuseenBottomNavigation"]
+//    图片放大缩小 https://github.com/chrisbanes/PhotoView
+    api rootProject.ext.dependencies["PhotoView"]
+    //网络访问  https://github.com/square/okhttp
+    api rootProject.ext.dependencies["okhttp"]
+    //GIF动画
+    api rootProject.ext.dependencies["android-gif-drawable"]
+
+    //Arouter页面跳转路由 https://github.com/alibaba/ARouter/blob/master/README_CN.md
+    implementation rootProject.ext.dependencies["arouter-api"]
+    kapt rootProject.ext.dependencies["arouter-compiler"]
+    //通用数据模型
+    api project(path: ':moduleData')
+    if (isNeedCommunicationLib.toBoolean()) {
+        api project(path: ':communicationLib')
+    }
+}

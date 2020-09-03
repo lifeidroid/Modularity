@@ -1,0 +1,6 @@
+include ':moduleData'
+include ':testb'
+include ':communicationLib'
+include ':carlLib'
+include ':app'
+rootProject.name = "Modularity"
