@@ -46,7 +46,7 @@ dependencies {
     //Arouter页面跳转路由 https://github.com/alibaba/ARouter/blob/master/README_CN.md
     implementation rootProject.ext.dependencies["arouter-api"]
     kapt rootProject.ext.dependencies["arouter-compiler"]
-    implementation project(path: ':carlLib')
+    implementation project(path: ':moduleCore:carlLib')
     testImplementation  rootProject.ext.dependencies["junit"]
 
 }

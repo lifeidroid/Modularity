@@ -1,7 +1,8 @@
-include ':lib-zxing'
-include ':moduleData'
+include ':moduleCore'
+include ':moduleCore:lib-zxing'
+include ':moduleBase:moduleData'
 include ':testb'
-include ':communicationLib'
-include ':carlLib'
+include ':moduleCore:communicationLib'
+include ':moduleCore:carlLib'
 include ':app'
 rootProject.name = "Modularity"

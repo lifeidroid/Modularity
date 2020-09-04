@@ -38,7 +38,7 @@ repositories {
 
 dependencies {
     api fileTree(include: ['*.jar'], dir: 'libs')
-    testImplementation  rootProject.ext.dependencies["junit"]
+    testImplementation rootProject.ext.dependencies["junit"]
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     //图片加载
     api rootProject.ext.dependencies["glide"]
@@ -65,14 +65,13 @@ dependencies {
     api rootProject.ext.dependencies["SmartRefreshLayout"]
     api rootProject.ext.dependencies["SmartRefreshHeader"]
     //底部导航 https://github.com/armcha/LuseenBottomNavigation
-//    api rootProject.ext.dependencies["LuseenBottomNavigation"]
-//    图片放大缩小 https://github.com/chrisbanes/PhotoView
+    //api rootProject.ext.dependencies["LuseenBottomNavigation"]
+    //图片放大缩小 https://github.com/chrisbanes/PhotoView
     api rootProject.ext.dependencies["PhotoView"]
     //网络访问  https://github.com/square/okhttp
     api rootProject.ext.dependencies["okhttp"]
-    //GIF动画
+    //GIF动画 https://github.com/koral--/android-gif-drawable
     api rootProject.ext.dependencies["android-gif-drawable"]
-
     //Arouter页面跳转路由 https://github.com/alibaba/ARouter/blob/master/README_CN.md
     implementation rootProject.ext.dependencies["arouter-api"]
     kapt rootProject.ext.dependencies["arouter-compiler"]
@@ -80,11 +79,11 @@ dependencies {
     api rootProject.ext.dependencies["tencentX5"]
 
     //通用数据模型
-    api project(path: ':moduleData')
+    api project(path: ':moduleBase:moduleData')
     if (isNeedCommunicationLib.toBoolean()) {
-        api project(path: ':communicationLib')
+        api project(path: ':moduleCore:communicationLib')
     }
     if (isNeedZXing.toBoolean()) {
-        api project(path: ':lib-zxing')
+        api project(path: ':moduleCore:lib-zxing')
     }
 }
