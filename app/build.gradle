@@ -50,7 +50,7 @@ dependencies {
     kapt rootProject.ext.dependencies["arouter-compiler"]
     implementation project(path: ':moduleCore:carlLib')
     if (isNeedTestB.toBoolean()) {
-        implementation project(path: ':testb')
+        implementation project(path: ':moduleSystem:testb')
     }
     testImplementation  rootProject.ext.dependencies["junit"]
 }
