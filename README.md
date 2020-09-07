@@ -21,7 +21,6 @@ widget: 常用自定义组件
 2、**communicationLib**:TCP Server/Client 通信封装，经典蓝牙/低功耗蓝牙通信封装  
 3、**lib-zxing**:二维码功能库
 - **moduleBase** 针对项目的功能封装集合  
-1、**muduleData**:通用数据模型库
 const: 页面路由清单  
 model: 业务逻辑中通用数据模型  
 service: 用于 module 之间项目调用接口
