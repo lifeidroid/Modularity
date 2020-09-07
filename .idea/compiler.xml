@@ -2,8 +2,8 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
+      <module name="moduleBase" target="1.7" />
       <module name="moduleCore" target="1.7" />
-      <module name="moduleData" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

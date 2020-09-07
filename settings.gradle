@@ -1,6 +1,6 @@
 include ':moduleCore'
 include ':moduleCore:lib-zxing'
-include ':moduleBase:moduleData'
+include ':moduleBase'
 include ':moduleSystem:testb'
 include ':moduleCore:communicationLib'
 include ':moduleCore:carlLib'

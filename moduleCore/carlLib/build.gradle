@@ -79,7 +79,7 @@ dependencies {
     api rootProject.ext.dependencies["tencentX5"]
 
     //通用数据模型
-    api project(path: ':moduleBase:moduleData')
+    api project(path: ':moduleBase')
     if (isNeedCommunicationLib.toBoolean()) {
         api project(path: ':moduleCore:communicationLib')
     }
