@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="620mm"
+        android:layout_height="300mm"
+        android:background="@drawable/bg_white_rectangle">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="30mm"
+            android:layout_marginTop="93mm"
+            android:layout_marginRight="30mm"
+            android:textColor="#666666"
+            android:id="@+id/tvContent"
+            android:textSize="@dimen/font_size_normal" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="60mm"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvSure"
+                android:layout_width="180mm"
+                android:layout_height="60mm"
+                android:background="@drawable/btn_bg"
+                android:gravity="center"
+                android:textColor="@color/textColor_white"
+                android:textSize="@dimen/font_size_normal" />
+
+            <TextView
+                android:id="@+id/tvCancel"
+                android:layout_width="180mm"
+                android:layout_height="60mm"
+                android:layout_marginLeft="90mm"
+                android:background="@drawable/btn_bg"
+                android:gravity="center"
+                android:textColor="@color/textColor_white"
+                android:textSize="@dimen/font_size_normal" />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

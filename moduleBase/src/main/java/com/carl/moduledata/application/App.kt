@@ -1,4 +1,4 @@
-package com.carl.modularity
+package com.carl.moduledata.application
 
 import android.app.Application
 import android.content.Context
@@ -16,6 +16,7 @@ import com.carl.carlLib.httpframe.HttpHelper
 import com.carl.carlLib.httpframe.XUtilsProcessor
 import com.carl.carlLib.manage.CommunicationManager
 import com.carl.carlLib.utils.XUtils3ImageLoader
+import com.carl.moduledata.R
 import com.lzy.imagepicker.ImagePicker
 import com.lzy.imagepicker.view.CropImageView
 import com.scwang.smartrefresh.header.MaterialHeader

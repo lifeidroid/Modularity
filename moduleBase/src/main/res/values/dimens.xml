@@ -1,0 +1,10 @@
+<resources>
+    <!--字体定义-->
+    <dimen name="font_size_tiny">10sp</dimen>
+    <dimen name="font_size_small">18sp</dimen>
+    <dimen name="font_size_normal">22sp</dimen>
+    <dimen name="font_size_large">28sp</dimen>
+    <dimen name="font_size_large_high">20sp</dimen>
+    <dimen name="font_size_xlarge">22sp</dimen>
+    <dimen name="font_size_xxlarge">32sp</dimen>
+</resources>
